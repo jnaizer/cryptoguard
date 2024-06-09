@@ -23,7 +23,7 @@ COUNT_BYTES=$(<"${BINARY_FILE}" wc -c)
 COUNT_BITS=$(( COUNT_BYTES * 8))
 
 { time "$TEST_SUITE_DIR/testu" "${BINARY_FILE}" "${COUNT_BITS}" small > "${RESULT_DIR}/test_smallcrush.log"; } 2> "$RESULT_DIR/time_smallcrush"
-echo "SmallCrush" >> "$RESULT_DIR/time"
+echo -e "\nSmallCrush" >> "$RESULT_DIR/time"
 cat "$RESULT_DIR/time_smallcrush" >> "$RESULT_DIR/time"
 rm "$RESULT_DIR/time_smallcrush"
 

@@ -17,7 +17,7 @@ if [ ! -d "$RESULT_DIR" ]; then
 fi
 
 { time while :; do cat $BINARY_FILE || exit; done | dieharder -a -g 200 | head -n 26 > "$RESULT_DIR/test_dieharder.log"; } 2> "$RESULT_DIR/time_dieharder"
-echo "Dieharder" >> "$RESULT_DIR/time"
+echo -e "\nDieharder" >> "$RESULT_DIR/time"
 cat "$RESULT_DIR/time_dieharder" >> "$RESULT_DIR/time"
 rm "$RESULT_DIR/time_dieharder"
 

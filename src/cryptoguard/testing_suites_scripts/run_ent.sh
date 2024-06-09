@@ -20,7 +20,7 @@ fi
 TEST_SUITE_DIR="$(dirname "$(realpath "$0")")/../testing_suites"
 
 { time "$TEST_SUITE_DIR/ent" "$BINARY_FILE" > "$RESULT_DIR/test_ent.log"; } 2> "$RESULT_DIR/time_ent"
-echo "ENT" >> "$RESULT_DIR/time"
+echo -e "\nENT" >> "$RESULT_DIR/time"
 cat "$RESULT_DIR/time_ent" >> "$RESULT_DIR/time"
 rm "$RESULT_DIR/time_ent"
 

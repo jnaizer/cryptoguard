@@ -19,9 +19,26 @@ fi
 # Get the path to the testing suite directory
 TEST_SUITE_DIR="$(dirname "$(realpath "$0")")/../testing_suites"
 
-# Create input file to be read in by the NIST testing suite
-input_file="$RESULT_DIR/nist_inputs.txt"
-cat <<EOL > "$input_file"
+# copy sts-2.1.2/experiments folder to present working directory for NIST program to be able to store the results
+cp -r "$TEST_SUITE_DIR/sts-2.1.2/experiments" "."
+
+# Function to clean up the temporary experiments directory
+cleanup() {
+    rm -rf "./experiments"
+}
+
+# Set up a trap to call the cleanup function on exit
+trap cleanup EXIT
+
+# create input file for the NIST testing suite
+# [0] Input File
+# User Prescribed Input File
+# Enter 0 if you DO NOT want to apply all of the statistical tests to each sequence and 1 if you DO.
+# Parameter Adjustments (0 to continue)
+# How many bitstreams?
+# [1] Binary - Each byte in data file contains 8 bits of data
+
+cat <<EOL > $RESULT_DIR/nist_input.txt
 0
 $BINARY_FILE
 1
@@ -30,27 +47,16 @@ $BINARY_FILE
 1
 EOL
 
-# copy experiments folder to present working directory of user for NIST to be able to store the results
-cp -r "$TEST_SUITE_DIR/sts-2.1.2/experiments" "."
-
-# Function to clean up the temporary directory
-cleanup() {
-    rm -rf "./experiments"
-}
-
-# Set up a trap to call the cleanup function on exit
-trap cleanup EXIT
-
 # Run the NIST test suite
-{ time "$TEST_SUITE_DIR/sts-2.1.2/assess" 10000 < "$input_file"; } 2> "$RESULT_DIR/time_nist"
+{ time "$TEST_SUITE_DIR/sts-2.1.2/assess" 10000 < "$RESULT_DIR/nist_input.txt"; } 2> "$RESULT_DIR/time_nist"
 
 # Log the timing results
-echo "NIST" >> "$RESULT_DIR/time"
+echo -e "\nNIST" >> "$RESULT_DIR/time"
 cat "$RESULT_DIR/time_nist" >> "$RESULT_DIR/time"
 rm "$RESULT_DIR/time_nist"
 
 # Copy the final analysis report to the result directory
-cp "$TEST_SUITE_DIR/experiments/AlgorithmTesting/finalAnalysisReport.txt" "$RESULT_DIR/test_nist.log"
+cp "./experiments/AlgorithmTesting/finalAnalysisReport.txt" "$RESULT_DIR/test_nist.log"
 
 echo "NIST test completed."
 

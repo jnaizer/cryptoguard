@@ -35,7 +35,7 @@ MIN_PR=$(( COUNT_LOG_BYTES - PR_STEPS - 1 ))
 MAX_PR=$(( MIN_PR + PR_STEPS ))
 
 { time (cat "$BINARY_FILE" | "$TEST_SUITE_DIR/pr" stdin64 -tlmin "$MIN_PR" -tlmax "$MAX_PR" -e 0.1 > "$RESULT_DIR/test_practrand.log"); } 2> "$RESULT_DIR/time_pr"
-echo "PractRand" >> "$RESULT_DIR/time"
+echo -e "\nPractRand" >> "$RESULT_DIR/time"
 cat "$RESULT_DIR/time_pr" >> "$RESULT_DIR/time"
 rm "$RESULT_DIR/time_pr"
 
