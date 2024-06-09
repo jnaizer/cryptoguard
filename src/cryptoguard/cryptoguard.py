@@ -218,7 +218,7 @@ def main(args=None):
     parser = argparse.ArgumentParser(description="cryptoguard is a Python package designed for conducting comprehensive testing of random number generators. It provides a collection of testing suites that evaluate the statistical properties and reliability of random number sequences.")
     parser.add_argument('-v', '--version', action='version', version='%(prog)s 1.0')
     parser.add_argument('-l', '--list-suites', action='store_true', help="List all available testing suites")
-    parser.add_argument('-b', '--binary-file', type=argparse.FileType('rb'), help="Binary file to test", required=True)
+    parser.add_argument('-b', '--binary-file', type=argparse.FileType('rb'), help="Binary file to test")
     parser.add_argument('-s', '--setting', type=int, choices=range(1, len(TESTING_SETTING_OPTIONS) + 1), help="Testing setting number (" + ", ".join(f"{idx}: {key}" for idx, key in enumerate(TESTING_SETTING_OPTIONS.keys(), start=1)) + ")")
     parser.add_argument('-i', '--binary-setting', type=str, help="Binary representation of the tests to run (only for Custom setting)")
     parser.add_argument('-d', '--directory', type=str, help="Directory to store the results (will be created if it doesn't exist)")

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "cryptoguard"
-version = "0.0.4"
+version = "0.0.5"
 #dynamic = ["version"]
 authors = [
   { name="John Naizer", email="jnaizer777@gmail.com" },

@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: cryptoguard
-Version: 0.0.4
+Version: 0.0.5
 Summary: cryptoguard is a comprehensive Python package enabling seamless execution of diverse random number testing suites, ensuring the statistical integrity and reliability of random number generators for various applications.
 Author-email: John Naizer <jnaizer777@gmail.com>
 Project-URL: Homepage, https://github.com/jnaizer/cryptoguard
