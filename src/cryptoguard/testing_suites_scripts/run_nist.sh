@@ -48,7 +48,7 @@ $BINARY_FILE
 EOL
 
 # Run the NIST test suite
-{ time "$TEST_SUITE_DIR/sts-2.1.2/assess" 10000 < "$RESULT_DIR/nist_input.txt"; } 2> "$RESULT_DIR/time_nist"
+{ time "$TEST_SUITE_DIR/sts-2.1.2/assess" 1000000 < "$RESULT_DIR/nist_input.txt"; } 2> "$RESULT_DIR/time_nist"
 
 # Log the timing results
 echo -e "\nNIST" >> "$RESULT_DIR/time"

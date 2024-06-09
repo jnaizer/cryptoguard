@@ -307,8 +307,12 @@ src/cryptoguard/testing_suites/sts-2.1.2/templates/template6
 src/cryptoguard/testing_suites/sts-2.1.2/templates/template7
 src/cryptoguard/testing_suites/sts-2.1.2/templates/template8
 src/cryptoguard/testing_suites/sts-2.1.2/templates/template9
+src/cryptoguard/testing_suites_scripts/run_alphabit.sh
+src/cryptoguard/testing_suites_scripts/run_bigcrush.sh
+src/cryptoguard/testing_suites_scripts/run_crush.sh
 src/cryptoguard/testing_suites_scripts/run_dieharder.sh
 src/cryptoguard/testing_suites_scripts/run_ent.sh
 src/cryptoguard/testing_suites_scripts/run_nist.sh
 src/cryptoguard/testing_suites_scripts/run_practrand.sh
+src/cryptoguard/testing_suites_scripts/run_rabbit.sh
 src/cryptoguard/testing_suites_scripts/run_smallcrush.sh
