@@ -14,7 +14,6 @@ TESTING_SUITES = [
     'PractRand',
     'SmallCrush',
     'Crush',
-    'BigCrush',
     'Alphabit',
     'Rabbit',
     'Dieharder',
