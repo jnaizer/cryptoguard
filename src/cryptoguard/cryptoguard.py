@@ -14,16 +14,17 @@ TESTING_SUITES = [
     'PractRand',
     'SmallCrush',
     'Crush',
+    'BigCrush',
     'Alphabit',
     'Rabbit',
     'Dieharder',
-    'NIST']
+    'NIST STS']
 
 # Testing setting options
 TESTING_SETTING_OPTIONS = {
     'Light': {TESTING_SUITES[0], TESTING_SUITES[1], TESTING_SUITES[2]},  # ENT, PractRand, TestU01 SmallCrush
-    'Recommended': {TESTING_SUITES[0], TESTING_SUITES[1], TESTING_SUITES[6], TESTING_SUITES[7]},
-    'All': set(TESTING_SUITES),
+    'Recommended': {TESTING_SUITES[0], TESTING_SUITES[1], TESTING_SUITES[6], TESTING_SUITES[7]}, # ENT, PractRand, Rabbit, Dieharder
+    'All': set(TESTING_SUITES), # All testing suites
     'Custom': set()
 }
 
@@ -41,7 +42,6 @@ def print_testing_settings():
 
 def print_testing_suites():
     """Prints the available testing suites."""
-    print()
     print("\n        T E S T I N G   S U I T E S")
     print("        ___________________________\n")
     for num, suite in enumerate(TESTING_SUITES, start=1):
@@ -119,7 +119,7 @@ def handle_directory_input():
             if not result_dir:
                 return os.getcwd()
             if os.path.exists(result_dir):
-                os.rmdir(result_dir)
+                return result_dir
             try:
                 os.makedirs(result_dir)
                 return result_dir
@@ -183,9 +183,12 @@ def run_testing_suites(binary_file_path, handled_binary_setting, result_dir):
 def handle_parsed_args(parser, parsed_args):
     """Handles the parsed command-line arguments."""
 
-    # If the -l flag is used, print the available testing suites and exit
-    if parsed_args.list_suites:
-        print_testing_suites()
+    # If the -l flag is used and/or the -o flag is used, print the available testing suites and/or settings
+    if parsed_args.list_settings or parsed_args.list_suites:
+        if parsed_args.list_settings:
+            print_testing_settings()
+        if parsed_args.list_suites:
+            print_testing_suites()
         sys.exit(0)
 
     # Check if the binary file is provided
@@ -217,6 +220,7 @@ def main(args=None):
     parser = argparse.ArgumentParser(description="cryptoguard is a Python package designed for conducting comprehensive testing of random number generators. It provides a collection of testing suites that evaluate the statistical properties and reliability of random number sequences.")
     parser.add_argument('-v', '--version', action='version', version='%(prog)s 1.0')
     parser.add_argument('-l', '--list-suites', action='store_true', help="List all available testing suites")
+    parser.add_argument('-g', '--list-settings', action='store_true', help="List all available testing settings")
     parser.add_argument('-b', '--binary-file', type=argparse.FileType('rb'), help="Binary file to test")
     parser.add_argument('-s', '--setting', type=int, choices=range(1, len(TESTING_SETTING_OPTIONS) + 1), help="Testing setting number (" + ", ".join(f"{idx}: {key}" for idx, key in enumerate(TESTING_SETTING_OPTIONS.keys(), start=1)) + ")")
     parser.add_argument('-i', '--binary-setting', type=str, help="Binary representation of the tests to run (only for Custom setting)")

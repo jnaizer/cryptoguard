@@ -9,6 +9,8 @@ src/cryptoguard.egg-info/dependency_links.txt
 src/cryptoguard.egg-info/entry_points.txt
 src/cryptoguard.egg-info/requires.txt
 src/cryptoguard.egg-info/top_level.txt
+src/cryptoguard/results/test_bigcrush.log
+src/cryptoguard/results/time
 src/cryptoguard/testing_suites/ent
 src/cryptoguard/testing_suites/pr
 src/cryptoguard/testing_suites/testu
@@ -308,7 +310,6 @@ src/cryptoguard/testing_suites/sts-2.1.2/templates/template7
 src/cryptoguard/testing_suites/sts-2.1.2/templates/template8
 src/cryptoguard/testing_suites/sts-2.1.2/templates/template9
 src/cryptoguard/testing_suites_scripts/run_alphabit.sh
-src/cryptoguard/testing_suites_scripts/run_bigcrush.sh
 src/cryptoguard/testing_suites_scripts/run_crush.sh
 src/cryptoguard/testing_suites_scripts/run_dieharder.sh
 src/cryptoguard/testing_suites_scripts/run_ent.sh
