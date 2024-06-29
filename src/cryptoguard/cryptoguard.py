@@ -14,7 +14,6 @@ TESTING_SUITES = [
     'PractRand',
     'SmallCrush',
     'Crush',
-    'BigCrush',
     'Alphabit',
     'Rabbit',
     'Dieharder',
@@ -145,7 +144,7 @@ def run_testing_suites(binary_file_path, handled_binary_setting, result_dir):
             if handled_binary_setting[suite_index] == '1':
                 # Get the directory of the currently executing script
                 script_dir = os.path.dirname(os.path.realpath(__file__))
-                testing_suites_scripts_path = os.path.join(script_dir, f"testing_suites_scripts/run_{suite.lower()}.sh")
+                testing_suites_scripts_path = os.path.join(script_dir, f"testing_suites_scripts/run_{suite.lower().replace(' ', '_')}.sh")
                 args = [testing_suites_scripts_path, binary_file_path, result_dir]
 
                 # Initialize start time for the process

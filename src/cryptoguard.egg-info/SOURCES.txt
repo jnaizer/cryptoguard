@@ -9,8 +9,6 @@ src/cryptoguard.egg-info/dependency_links.txt
 src/cryptoguard.egg-info/entry_points.txt
 src/cryptoguard.egg-info/requires.txt
 src/cryptoguard.egg-info/top_level.txt
-src/cryptoguard/results/test_bigcrush.log
-src/cryptoguard/results/time
 src/cryptoguard/testing_suites/ent
 src/cryptoguard/testing_suites/pr
 src/cryptoguard/testing_suites/testu
