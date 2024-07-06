@@ -81,6 +81,3 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ## Acknowledgements
 This project was created as a part of my M.S. in Computer Science Thesis Report.
-
-## Contact
-For any inquiries, please contact [jnaizer777@gmail.com].
