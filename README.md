@@ -6,7 +6,7 @@
 
 ## Features
 
-- Supports multiple testing suites, including ENT, PractRand, TestU01, Rabbit, Dieharder, and NIST STS.
+- Supports multiple testing suites, including ENT, PractRand, TestU01, Dieharder, and NIST STS.
 - Offers predefined testing settings: Light, Recommended, All, and Custom.
 - Allows custom selection of testing suites using binary representation.
 - Stores the results in a user-specified directory.
@@ -39,7 +39,13 @@ cryptoguard [options]
 - -i, --binary-setting: Binary representation of the tests to run (only for Custom setting).
 - -d, --directory: Directory to store the results (will be created if it doesn't exist).
 
-### Example
+### Examples
+To test a binary file with no prespecified user input:
+```bash
+cryptoguard
+```
+A series of prompts will then be displayed requiring user to specify the binary file, the setting, the binary setting (if user selects Custom), and the directory to store the results.
+
 To test a binary file using the recommended settings and store the results in the results directory:
 
 ```bash
@@ -73,5 +79,5 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ## Acknowledgements
 This project was created as a part of my M.S. in Computer Science Thesis Report.
 
-Contact
+## Contact
 For any inquiries, please contact [jnaizer777@gmail.com].
