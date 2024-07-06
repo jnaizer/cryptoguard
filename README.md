@@ -19,6 +19,9 @@ You can install the `cryptoguard` package using pip:
 pip install cryptoguard
 ```
 
+## Version
+Current version: 1.0
+
 ## Usage
 Run the script using the command line:
 
