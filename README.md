@@ -19,6 +19,12 @@ You can install the `cryptoguard` package using pip:
 pip install cryptoguard
 ```
 
+If you would like to use the Dieharder testing suite within Cryptoguard, you will also need to manually install dieharder. To install dieharder on Ubuntu or Debian, please run
+
+```bash
+sudo apt-get install -y dieharder
+```
+
 ## Version
 Current version: 1.0
 
