@@ -86,4 +86,4 @@ Contributions are welcome! Please submit a pull request or open an issue to disc
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## Acknowledgements
-This project was created as a part of my M.S. in Computer Science Thesis Report.
+This project was created as a part of my M.S. in Computer Science Thesis under my advisor Dr. Khodakhast Bibak in the Department of Computer Science & Software Engineering at Miami University (Oxford, OH).
